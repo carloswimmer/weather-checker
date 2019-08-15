@@ -1,5 +1,5 @@
-# Weather Exercise ReactJs
-Test task to apply to the front-end job.
+# Weather Checker
+Test task to apply to front-end job.
 
 ## Weather forecast end-point
 
