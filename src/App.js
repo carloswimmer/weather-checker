@@ -1,14 +1,18 @@
-import React from 'react';
-import './App.css';
+import React, { Component } from 'react'
+import './App.css'
+import { Provider } from 'react-redux'
 
-function App() {
-  return (
-    <div>
-      <h1>
-        App
-      </h1>
-    </div>
-  );
+import Forecasts from './components/Forecasts'
+import store from './store'
+
+export default class App extends Component {
+  render() {
+    return (
+      <Provider store={store}>
+        <div>
+            <Forecasts />
+        </div>
+      </Provider>
+    )
+  }
 }
-
-export default App;
