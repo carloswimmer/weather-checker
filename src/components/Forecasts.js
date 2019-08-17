@@ -1,15 +1,15 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { fetchCelsiusForecasts } from '../actions/forecastActions'
+import { fetchForecasts } from '../actions/forecastActions'
 
 class Forecasts extends Component {
   componentDidMount() {
-    this.props.fetchCelsiusForecasts()
+    this.props.fetchForecasts(this.props.forecasts.isCelsius)
   }
 
   render() {
-    const forecastItems = this.props.forecasts.map(item => (
+    const forecastItems = this.props.forecasts.items.map(item => (
       <div key={item.dt}>
         <h3>Temperature:</h3>
         <p>{item.main.temp}</p>
@@ -25,12 +25,12 @@ class Forecasts extends Component {
 }
 
 Forecasts.propTypes = {
-  fetchCelsiusForecasts: PropTypes.func.isRequired,
-  forecasts: PropTypes.array.isRequired
+  fetchForecasts: PropTypes.func.isRequired,
+  forecasts: PropTypes.object.isRequired
 }
 
 const mapStateToProps = state => ({
-  forecasts: state.celsiusForecasts.items
+  forecasts: state.forecasts
 })
 
-export default connect(mapStateToProps, { fetchCelsiusForecasts })(Forecasts)
+export default connect(mapStateToProps, { fetchForecasts })(Forecasts)

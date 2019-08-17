@@ -1,10 +1,12 @@
 import axios from 'axios'
+import { idApi } from '../env'
 import { FETCH_CELSIUS_FORECASTS } from './types'
+import { TOGGLE_CELSIUS } from './types'
 
-export const fetchCelsiusForecasts = () => dispatch => {
-  const id = '75f972b80e26f14fe6c920aa6a85ad57'
+export const fetchForecasts = isCelsius => dispatch => {
+  let scale = isCelsius ? 'metric' : 'imperial'
   const url = `http://api.openweathermap.org/data/2.5/forecast?q=Munich,de&` +
-  `units=metric&APPID=${id}&cnt=40`
+  `units=${scale}&APPID=${idApi}&cnt=40`
   
   axios.get(url)
     .then(response => response.data.list)
@@ -13,4 +15,12 @@ export const fetchCelsiusForecasts = () => dispatch => {
       payload: forecasts
     }))
     .catch(error => console.log(error.response.data.message))
+}
+
+export const toggleIsCelsius = isCelsius => dispatch => {
+  isCelsius = !isCelsius
+  dispatch({
+    type: TOGGLE_CELSIUS,
+    payload: isCelsius
+  })
 }
