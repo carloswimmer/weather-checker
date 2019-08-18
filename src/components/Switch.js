@@ -7,7 +7,7 @@ import { connect } from 'react-redux'
 import { handleIsFahrenheit } from '../actions/forecastActions'
 import { fetchForecasts } from '../actions/forecastActions'
 
-class Toggle extends Component { 
+class Switch extends Component { 
   toggleScale (event) {
     let result = event.target.checked
     let { handleIsFahrenheit, fetchForecasts } = this.props
@@ -19,7 +19,6 @@ class Toggle extends Component {
   textStyle = () => {
     return {
       fontWeight: '400',
-      paddingTop: '3px'
     }
   }
 
@@ -60,7 +59,7 @@ class Toggle extends Component {
   }
 }
 
-Toggle.propTypes = {
+Switch.propTypes = {
   handleIsFahrenheit: PropTypes.func.isRequired,
   fetchForecasts: PropTypes.func.isRequired,
   forecasts: PropTypes.object.isRequired
@@ -84,4 +83,4 @@ const mapStateToProps = state => ({
   forecasts: state.forecasts
 })
 
-export default connect (mapStateToProps, { handleIsFahrenheit, fetchForecasts })(Toggle)
+export default connect (mapStateToProps, { handleIsFahrenheit, fetchForecasts })(Switch)
