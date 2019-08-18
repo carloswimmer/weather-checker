@@ -5,7 +5,7 @@ import { fetchForecasts } from '../actions/forecastActions'
 
 class Forecasts extends Component {
   componentDidMount() {
-    this.props.fetchForecasts(this.props.forecasts.isCelsius)
+    this.props.fetchForecasts(this.props.forecasts.isFahrenheit)
   }
 
   render() {

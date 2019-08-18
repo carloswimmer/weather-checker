@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
+import 'typeface-roboto'
 import './App.css'
 import { Provider } from 'react-redux'
 
+import Header from './components/Header'
 import Forecasts from './components/Forecasts'
-import Toggle from './components/Toggle'
 import store from './store'
 
 export default class App extends Component {
@@ -11,8 +12,8 @@ export default class App extends Component {
     return (
       <Provider store={store}>
         <div>
-            <Toggle />
-            <Forecasts />
+          <Header />
+          <Forecasts />
         </div>
       </Provider>
     )
