@@ -5,7 +5,7 @@ import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
 
 import { ReactComponent as Logo } from '../assets/WeatherLogo.svg'
-import SwitchScale from './SwitchScale'
+import ScaleSwitcher from './ScaleSwitcher'
 
 const useStyles = makeStyles({
   root: {
@@ -38,7 +38,7 @@ export default function Header() {
               CHECKER
             </span>
           </Typography>
-          <SwitchScale />
+          <ScaleSwitcher />
         </Toolbar>
       </AppBar>
     </div>

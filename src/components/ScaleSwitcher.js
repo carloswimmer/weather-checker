@@ -7,7 +7,7 @@ import { connect } from 'react-redux'
 import { handleIsFahrenheit } from '../actions/forecastActions'
 import { fetchForecasts } from '../actions/forecastActions'
 
-class SwitchScale extends Component { 
+class ScaleSwitcher extends Component { 
   toggleScale (event) {
     let result = event.target.checked
     let { handleIsFahrenheit, fetchForecasts } = this.props
@@ -59,7 +59,7 @@ class SwitchScale extends Component {
   }
 }
 
-SwitchScale.propTypes = {
+ScaleSwitcher.propTypes = {
   handleIsFahrenheit: PropTypes.func.isRequired,
   fetchForecasts: PropTypes.func.isRequired,
   forecasts: PropTypes.object.isRequired
@@ -83,4 +83,4 @@ const mapStateToProps = state => ({
   forecasts: state.forecasts
 })
 
-export default connect (mapStateToProps, { handleIsFahrenheit, fetchForecasts })(SwitchScale)
+export default connect (mapStateToProps, { handleIsFahrenheit, fetchForecasts })(ScaleSwitcher)
