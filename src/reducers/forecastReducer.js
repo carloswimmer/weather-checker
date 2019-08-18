@@ -1,23 +1,23 @@
-import { FETCH_CELSIUS_FORECASTS } from '../actions/types'
-import { TOGGLE_CELSIUS } from '../actions/types'
+import { FETCH_FORECASTS } from '../actions/types'
+import { TOGGLE_SCALE } from '../actions/types'
 
 const initialState = {
   items: [],
-  isCelsius: true
+  isFahrenheit: false
 }
 
 export default function(state = initialState, action) {
   switch (action.type) {
-    case FETCH_CELSIUS_FORECASTS:
+    case FETCH_FORECASTS:
       return {
         ...state,
         items: action.payload
       }
 
-    case TOGGLE_CELSIUS:
+    case TOGGLE_SCALE:
       return {
         ...state,
-        isCelsius: action.payload
+        isFahrenheit: action.payload
       }
   
     default:
