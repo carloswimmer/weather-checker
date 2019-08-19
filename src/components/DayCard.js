@@ -30,7 +30,7 @@ export default function DayCard(props) {
       <CardActionArea>
         <CardMedia className={classes.media}>
           <Typography variant="h1">
-            {props.temp}
+            {props.temp}°C
           </Typography>
         </CardMedia>
         <CardContent>

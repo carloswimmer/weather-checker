@@ -6,12 +6,17 @@ import DayCard from './DayCard'
 
 class CardRow extends Component {
   
-  setDates(days, number) {
+  getDates(days, number) {
     let array = [].concat(days)
-    if (array[0]) return array[number].date
+    if (array[number]) return array[number].date
     return
   }
 
+  getTemperature(days, number) {
+    let array = [].concat(days)
+    if (array[number]) return array[number].averageTemp
+    return
+  }
   
 
   render() {
@@ -19,20 +24,20 @@ class CardRow extends Component {
       <React.Fragment>
         <Grid item sm={4}>
           <DayCard 
-            date={this.setDates(this.props.days, 0)}
-            temp="18°C"
+            date={this.getDates(this.props.days, 0)}
+            temp={this.getTemperature(this.props.days, 0)}
           />
         </Grid>
         <Grid item sm={4}>
           <DayCard 
-            date={this.setDates(this.props.days, 1)}
-            temp="18°C"
+            date={this.getDates(this.props.days, 1)}
+            temp={this.getTemperature(this.props.days, 1)}
           />
         </Grid>
         <Grid item sm={4}>
           <DayCard 
-            date={this.setDates(this.props.days, 2)}
-            temp="18°C"
+            date={this.getDates(this.props.days, 2)}
+            temp={this.getTemperature(this.props.days, 2)}
           />
         </Grid>
       </React.Fragment>
