@@ -5,6 +5,7 @@ import Container from '@material-ui/core/Container'
 import Paper from '@material-ui/core/Paper'
 import Grid from '@material-ui/core/Grid'
 import TimeController from './TimeController'
+import Details from './Details'
 
 const useStyles = makeStyles(theme => ({
   container: {
@@ -52,7 +53,12 @@ export default function Forecasts() {
     return (
       <React.Fragment>
         <Grid item sm={12}>
-          <Paper className={classes.paperSmall}>item</Paper>
+          <Paper 
+            component={'div'} 
+            className={classes.paper}
+          >
+            <Details />
+          </Paper>
         </Grid>
       </React.Fragment>
     );

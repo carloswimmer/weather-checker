@@ -1,27 +1,47 @@
 import React, { Component } from 'react'
-import Typography from '@material-ui/core/Typography';
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { fetchForecasts } from '../actions/forecastActions'
+import Hour from './Hour'
 
 class Details extends Component {
   componentDidMount() {
-    this.props.fetchForecasts(this.props.forecasts.isFahrenheit)
+    this.props.fetchForecasts(this.props.isFahrenheit)
+  }
+
+  chartStyle() {
+    return {
+      minHeight: '40vh',
+      display: 'flex',
+      justifyContent: 'space-around',
+      alignItems: 'flex-end'
+    }
+  }
+
+  groupWrapper() {
+    return {
+      height: '100%'
+    }
   }
 
   render() {
-    const forecastItems = this.props.forecasts.items.map(item => (
-      <div key={item.dt}>
-        <h3>Temperature:</h3>
-        <p>{item.main.temp}</p>
+    const forecastHours = this.props.measures.map(measure => (
+      <div 
+        key={measure.hour}
+        style={this.groupWrapper()}
+      >
+        <Hour 
+          hour={measure.hour} 
+          icon={measure.weatherIcon} 
+          temp={measure.mainTemp} 
+        />
       </div>
     ))
     return (
       <React.Fragment>
-        <Typography>
-          <h1>Forecasts</h1>
-          {forecastItems}
-        </Typography>
+        <div style={this.chartStyle()}>
+          {forecastHours}
+        </div>
       </React.Fragment> 
     )
   }
@@ -29,11 +49,15 @@ class Details extends Component {
 
 Details.propTypes = {
   fetchForecasts: PropTypes.func.isRequired,
-  forecasts: PropTypes.object.isRequired
+  days: PropTypes.array.isRequired,
+  measures: PropTypes.array.isRequired,
+  isFahrenheit: PropTypes.bool.isRequired
 }
 
 const mapStateToProps = state => ({
-  forecasts: state.forecasts
+  days: state.forecasts.days,
+  measures: state.forecasts.measures,
+  isFahrenheit: state.forecasts.isFahrenheit
 })
 
 export default connect(mapStateToProps, { fetchForecasts })(Details)
