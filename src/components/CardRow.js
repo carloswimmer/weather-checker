@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import Grid from '@material-ui/core/Grid'
 import DayCard from './DayCard'
+import { changeDetails } from '../actions/forecastActions'
 
 class CardRow extends Component {
   
@@ -18,31 +19,44 @@ class CardRow extends Component {
     return
   }
   
+  setDetails(days, number) {
+    let array = [].concat(days)
+    if (array[number]) {
+      const measures = array[number].measures
+      this.props.changeDetails(measures)
+    }  
+  }
 
   render() {
     let { days, dayCards, isFahrenheit } = this.props
     return (
       <React.Fragment>
         <Grid item sm={4}>
-          <DayCard 
-            date={this.getDates(days, dayCards[0])}
-            temp={this.getTemperature(days, dayCards[0])}
-            fahrenheit={isFahrenheit}
-          />
+          <div onClick={() => this.setDetails(days, dayCards[0])}>
+            <DayCard 
+              date={this.getDates(days, dayCards[0])}
+              temp={this.getTemperature(days, dayCards[0])}
+              fahrenheit={isFahrenheit}
+            />
+          </div>
         </Grid>
         <Grid item sm={4}>
-          <DayCard 
-            date={this.getDates(days, dayCards[1])}
-            temp={this.getTemperature(days, dayCards[1])}
-            fahrenheit={isFahrenheit}
-          />
+          <div onClick={() => this.setDetails(days, dayCards[1])}>
+            <DayCard 
+              date={this.getDates(days, dayCards[1])}
+              temp={this.getTemperature(days, dayCards[1])}
+              fahrenheit={isFahrenheit}
+            />
+          </div>
         </Grid>
         <Grid item sm={4}>
-          <DayCard 
-            date={this.getDates(days, dayCards[2])}
-            temp={this.getTemperature(days, dayCards[2])}
-            fahrenheit={isFahrenheit}
-          />
+          <div onClick={() => this.setDetails(days, dayCards[2])}>
+            <DayCard 
+              date={this.getDates(days, dayCards[2])}
+              temp={this.getTemperature(days, dayCards[2])}
+              fahrenheit={isFahrenheit}
+            />
+          </div>
         </Grid>
       </React.Fragment>
     )
@@ -50,6 +64,7 @@ class CardRow extends Component {
 }
 
 CardRow.propTypes = {
+  changeDetails: PropTypes.func.isRequired,
   days: PropTypes.array.isRequired,
   isFahrenheit: PropTypes.bool.isRequired,
   dayCards: PropTypes.array.isRequired
@@ -61,4 +76,4 @@ const mapStateToProps = state => ({
   dayCards: state.forecasts.dayCards
 })
 
-export default connect(mapStateToProps, { })(CardRow)
+export default connect(mapStateToProps, { changeDetails })(CardRow)

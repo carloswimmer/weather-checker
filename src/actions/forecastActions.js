@@ -3,6 +3,7 @@ import { idApi } from '../env'
 import { FETCH_FORECASTS } from './types'
 import { TOGGLE_SCALE } from './types'
 import { CHANGE_DAYS } from './types'
+import { CHANGE_DETAILS } from './types'
 import { forecastsController } from './forecastsController'
 
 let dayCards = []
@@ -40,5 +41,12 @@ export const changeDays = increment => dispatch => {
   dispatch({
     type: CHANGE_DAYS,
     payload: newDayCards
+  })
+}
+
+export const changeDetails = measures => dispatch => {
+  dispatch({
+    type: CHANGE_DETAILS,
+    payload: measures
   })
 }

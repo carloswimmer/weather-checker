@@ -46,9 +46,9 @@ const dateFormatter = date => {
 const groupByDay = array => {
   let groupMonthDay = array[0].monthDay
   let groupDate = array[0].date
-  let group = new Forecast(groupMonthDay, groupDate, [], 1)
+  let group = new Forecast(groupMonthDay, groupDate, [], 0)
   let groupedArray = []
-  let number = 1
+  let number = 0
 
   groupedArray.push(group)
   array.forEach(item => {

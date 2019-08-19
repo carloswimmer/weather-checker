@@ -1,6 +1,7 @@
 import { FETCH_FORECASTS } from '../actions/types'
 import { TOGGLE_SCALE } from '../actions/types'
 import { CHANGE_DAYS } from '../actions/types'
+import { CHANGE_DETAILS } from '../actions/types'
 
 const initialState = {
   days: [],
@@ -28,6 +29,12 @@ export default function(state = initialState, action) {
       return {
         ...state,
         dayCards: action.payload
+      }
+
+    case CHANGE_DETAILS:
+      return {
+        ...state,
+        measures: action.payload
       }
   
     default:

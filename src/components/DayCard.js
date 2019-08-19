@@ -47,16 +47,26 @@ export default function DayCard(props) {
           <Temperature/>
         </CardMedia>
         <CardContent>
-          <Typography gutterBottom variant="h5">
+          <Typography 
+            gutterBottom 
+            variant="h5"
+          >
             {props.date}
           </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
+          <Typography 
+            variant="body2" 
+            color="textSecondary" 
+            component="p"
+          >
             Description
           </Typography>
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button size="small" color="primary">
+        <Button 
+          size="small" 
+          color="primary"
+        >
           Each 3h
         </Button>
       </CardActions>
