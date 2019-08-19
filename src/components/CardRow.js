@@ -26,18 +26,21 @@ class CardRow extends Component {
           <DayCard 
             date={this.getDates(this.props.days, 0)}
             temp={this.getTemperature(this.props.days, 0)}
+            fahrenheit={this.props.isFahrenheit}
           />
         </Grid>
         <Grid item sm={4}>
           <DayCard 
             date={this.getDates(this.props.days, 1)}
             temp={this.getTemperature(this.props.days, 1)}
+            fahrenheit={this.props.isFahrenheit}
           />
         </Grid>
         <Grid item sm={4}>
           <DayCard 
             date={this.getDates(this.props.days, 2)}
             temp={this.getTemperature(this.props.days, 2)}
+            fahrenheit={this.props.isFahrenheit}
           />
         </Grid>
       </React.Fragment>
@@ -47,10 +50,12 @@ class CardRow extends Component {
 
 CardRow.propTypes = {
   days: PropTypes.array.isRequired,
+  isFahrenheit: PropTypes.bool.isRequired
 }
 
 const mapStateToProps = state => ({
   days: state.forecasts.days,
+  isFahrenheit: state.forecasts.isFahrenheit
 })
 
 export default connect(mapStateToProps, { })(CardRow)

@@ -25,13 +25,26 @@ const useStyles = makeStyles({
 export default function DayCard(props) {
   const classes = useStyles();
 
+  const Temperature = () => {
+    if (props.fahrenheit) {
+      return (
+        <Typography variant="h1">
+          {props.temp}°F
+        </Typography>
+      )
+    }
+    return (
+      <Typography variant="h1">
+        {props.temp}°C
+      </Typography>
+    )
+  }
+
   return (
     <Card className={classes.card}>
       <CardActionArea>
         <CardMedia className={classes.media}>
-          <Typography variant="h1">
-            {props.temp}°C
-          </Typography>
+          <Temperature/>
         </CardMedia>
         <CardContent>
           <Typography gutterBottom variant="h5">
