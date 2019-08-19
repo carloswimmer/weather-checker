@@ -6,6 +6,7 @@ import Paper from '@material-ui/core/Paper'
 import Grid from '@material-ui/core/Grid'
 import TimeController from './TimeController'
 import Details from './Details'
+import CardRow from './CardRow'
 
 const useStyles = makeStyles(theme => ({
   container: {
@@ -21,33 +22,11 @@ const useStyles = makeStyles(theme => ({
     padding: theme.spacing(2),
     textAlign: 'center',
     color: theme.palette.text.secondary,
-  },
-  paperSmall: {
-    padding: theme.spacing(2),
-    textAlign: 'center',
-    color: theme.palette.text.secondary,
-    minHeight: '38vh'
-  },
+  }
 }))
 
 export default function Forecasts() {
   const classes = useStyles();
-
-  function CardRow() {
-    return (
-      <React.Fragment>
-        <Grid item sm={4}>
-          <Paper className={classes.paperSmall}>item</Paper>
-        </Grid>
-        <Grid item sm={4}>
-          <Paper className={classes.paperSmall}>item</Paper>
-        </Grid>
-        <Grid item sm={4}>
-          <Paper className={classes.paperSmall}>item</Paper>
-        </Grid>
-      </React.Fragment>
-    );
-  }
 
   function ChartRow() {
     return (
