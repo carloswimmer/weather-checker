@@ -6,6 +6,21 @@ export default function Hour(props) {
     return `http://openweathermap.org/img/wn/${props.icon}.png`
   }
 
+  const Temperature = () => {
+    if (props.fahrenheit) {
+      return (
+        <Typography variant="body2">
+        { Math.round(props.temp) }°F
+      </Typography>
+      )
+    }
+    return (
+      <Typography variant="body2">
+        { Math.round(props.temp) }°C
+      </Typography>
+    )
+  }
+
   const barStyle = () => {
     return {
       height: `${props.temp*2}%`,
@@ -29,9 +44,7 @@ export default function Hour(props) {
   return (
     <div style={containerStyle()}>
       <img src={callIcon()} alt="forecast icon"/>
-      <Typography variant="body2">
-        { Math.round(props.temp) }°C
-      </Typography>
+      <Temperature/>
       <div style={barStyle()}></div>
       <Typography variant="body2">
         { props.hour }

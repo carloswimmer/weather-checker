@@ -34,6 +34,7 @@ class Details extends Component {
           hour={measure.hour} 
           icon={measure.weatherIcon} 
           temp={measure.mainTemp} 
+          fahrenheit={this.props.isFahrenheit}
         />
       </div>
     ))
