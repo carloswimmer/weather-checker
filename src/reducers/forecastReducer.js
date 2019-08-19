@@ -7,7 +7,8 @@ const initialState = {
   days: [],
   measures: [],
   isFahrenheit: false,
-  dayCards: [0, 1, 2]
+  dayCards: [0, 1, 2],
+  detailsDate: ''
 }
 
 export default function(state = initialState, action) {
@@ -17,7 +18,8 @@ export default function(state = initialState, action) {
         ...state,
         days: action.payload,
         measures: action.payload[0].measures,
-        dayCards: [0, 1, 2]
+        dayCards: [0, 1, 2],
+        detailsDate: action.payload[0].date
       }
 
     case TOGGLE_SCALE:
@@ -35,7 +37,8 @@ export default function(state = initialState, action) {
     case CHANGE_DETAILS:
       return {
         ...state,
-        measures: action.payload
+        measures: action.payload.measures,
+        detailsDate: action.payload.date
       }
   
     default:

@@ -13,7 +13,7 @@ const useStyles = makeStyles({
     maxWidth: 345,
   },
   media: {
-    height: 140,
+    height: 120,
     backgroundColor: '#3f51b5',
     display: 'flex',
     justifyContent: 'center',
@@ -28,13 +28,13 @@ export default function DayCard(props) {
   const Temperature = () => {
     if (props.fahrenheit) {
       return (
-        <Typography variant="h1">
+        <Typography variant="h2">
           {props.temp}°F
         </Typography>
       )
     }
     return (
-      <Typography variant="h1">
+      <Typography variant="h2">
         {props.temp}°C
       </Typography>
     )
@@ -67,7 +67,7 @@ export default function DayCard(props) {
           size="small" 
           color="primary"
         >
-          Each 3h
+          Forecast Details
         </Button>
       </CardActions>
     </Card>

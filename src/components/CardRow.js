@@ -23,7 +23,8 @@ class CardRow extends Component {
     let array = [].concat(days)
     if (array[number]) {
       const measures = array[number].measures
-      this.props.changeDetails(measures)
+      const date = this.getDates(days, number)
+      this.props.changeDetails(measures, date)
     }  
   }
 

@@ -46,9 +46,9 @@ export const changeDays = increment => dispatch => {
   })
 }
 
-export const changeDetails = measures => dispatch => {
+export const changeDetails = (measures, date) => dispatch => {
   dispatch({
     type: CHANGE_DETAILS,
-    payload: measures
+    payload: { measures, date }
   })
 }

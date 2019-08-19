@@ -11,7 +11,7 @@ class Details extends Component {
 
   chartStyle() {
     return {
-      minHeight: '40vh',
+      minHeight: '33vh',
       display: 'flex',
       justifyContent: 'space-around',
       alignItems: 'flex-end'
