@@ -16,7 +16,11 @@ export default function Button(props) {
 
   return (
     <div>
-      <Fab color="primary" aria-label="next" className={classes.fab}>
+      <Fab 
+        color="primary" 
+        aria-label="next" 
+        className={classes.fab}
+      >
         {next ? <ChevronRightIcon /> : <ChevronLeftIcon />}
       </Fab>
     </div>

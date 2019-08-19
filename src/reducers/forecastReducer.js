@@ -1,11 +1,12 @@
 import { FETCH_FORECASTS } from '../actions/types'
 import { TOGGLE_SCALE } from '../actions/types'
-import { MOUNT_DAY } from '../actions/types'
+import { CHANGE_DAYS } from '../actions/types'
 
 const initialState = {
   days: [],
   measures: [],
-  isFahrenheit: false
+  isFahrenheit: false,
+  dayCards: [0, 1, 2]
 }
 
 export default function(state = initialState, action) {
@@ -23,10 +24,10 @@ export default function(state = initialState, action) {
         isFahrenheit: action.payload
       }
 
-    case MOUNT_DAY:
+    case CHANGE_DAYS:
       return {
         ...state,
-        measures: action.payload
+        dayCards: action.payload
       }
   
     default:

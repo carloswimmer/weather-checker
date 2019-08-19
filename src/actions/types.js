@@ -1,3 +1,3 @@
 export const FETCH_FORECASTS = 'FETCH_FORECASTS'
 export const TOGGLE_SCALE = 'TOGGLE_SCALE'
-export const MOUNT_DAY = 'MOUNT_DAY'
+export const CHANGE_DAYS = 'CHANGE_DAYS'

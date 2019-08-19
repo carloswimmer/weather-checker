@@ -2,10 +2,10 @@ import axios from 'axios'
 import { idApi } from '../env'
 import { FETCH_FORECASTS } from './types'
 import { TOGGLE_SCALE } from './types'
-import { MOUNT_DAY } from './types'
+import { CHANGE_DAYS } from './types'
 import { forecastsController } from './forecastsController'
 
-let simplified = []
+let dayCards = []
 
 export const fetchForecasts = isFahrenheit => dispatch => {
   let scale = isFahrenheit ? 'imperial' : 'metric'
@@ -15,7 +15,7 @@ export const fetchForecasts = isFahrenheit => dispatch => {
   axios.get(url)
     .then(response => response.data.list)
     .then(forecasts => {
-      simplified = forecastsController(forecasts)
+      let simplified = forecastsController(forecasts)
 
       dispatch({
         type: FETCH_FORECASTS,
@@ -32,10 +32,13 @@ export const handleIsFahrenheit = isFahrenheit => dispatch => {
   })
 }
 
-export const mountDay = simplified => dispatch => {
-  console.log(simplified)
+export const changeDays = increment => dispatch => {
+  if (dayCards.length === 0) dayCards = [0, 1, 2]
+  let newDayCards = increment ? dayCards.map(item => item + 1) : dayCards.map(item => item - 1)
+  dayCards = newDayCards
+
   dispatch({
-    type: MOUNT_DAY,
-    payload: simplified
+    type: CHANGE_DAYS,
+    payload: newDayCards
   })
 }
