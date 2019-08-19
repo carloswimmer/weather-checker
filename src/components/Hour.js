@@ -36,8 +36,8 @@ export default function Hour(props) {
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'flex-end',
+      alignItems: 'center',
       height: '38vh',
-      width: '44px',
     }
   }
 

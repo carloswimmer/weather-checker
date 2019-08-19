@@ -35,7 +35,9 @@ export const handleIsFahrenheit = isFahrenheit => dispatch => {
 
 export const changeDays = increment => dispatch => {
   if (dayCards.length === 0) dayCards = [0, 1, 2]
-  let newDayCards = increment ? dayCards.map(item => item + 1) : dayCards.map(item => item - 1)
+  let newDayCards = increment ? 
+    dayCards.map(item => item + 1) : 
+    dayCards.map(item => item - 1)
   dayCards = newDayCards
 
   dispatch({

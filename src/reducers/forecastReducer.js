@@ -16,7 +16,8 @@ export default function(state = initialState, action) {
       return {
         ...state,
         days: action.payload,
-        measures: action.payload[0].measures
+        measures: action.payload[0].measures,
+        dayCards: [0, 1, 2]
       }
 
     case TOGGLE_SCALE:
