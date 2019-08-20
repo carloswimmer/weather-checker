@@ -46,9 +46,18 @@ export const changeDays = increment => dispatch => {
   })
 }
 
-export const changeDetails = (measures, date) => dispatch => {
+export const changeDetails = (days, number) => dispatch => {
+  let details = {}
+  let array = [].concat(days)
+  if (array[number]) {
+    const measures = array[number].measures
+    const date = array[number].date
+    const averageDescription = array[number].averageDescription
+    details = { measures, date, averageDescription }
+  } 
+
   dispatch({
     type: CHANGE_DETAILS,
-    payload: { measures, date }
+    payload: details
   })
 }

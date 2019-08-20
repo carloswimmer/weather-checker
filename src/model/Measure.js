@@ -4,11 +4,13 @@ export default class Measure {
     hour= '',
     mainTemp= 0,
     weatherIcon= '',
-    windSpeed= 0
+    windSpeed= 0,
+    mainDescription=''
   ) {
       this.hour = hour;
       this.mainTemp = mainTemp;
       this.weatherIcon = weatherIcon;
       this.windSpeed = windSpeed;
+      this.mainDescription = mainDescription;
     }
 }

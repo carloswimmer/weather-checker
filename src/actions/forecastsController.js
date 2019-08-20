@@ -5,6 +5,7 @@ export const forecastsController = forecasts => {
   const simplifiedList = simplify(forecasts)
   const groupedList = groupByDay(simplifiedList)
   setAverageTemp(groupedList)
+  setAverageDescription(groupedList)
 
   return groupedList
 }
@@ -17,7 +18,8 @@ const simplify = array => {
       item.dt_txt.substr(11, 5),
       item.main.temp,
       item.weather[0].icon,
-      item.wind.speed
+      item.wind.speed,
+      item.weather[0].main
     )
     let forecast = new Forecast(
       item.dt_txt.substr(8, 2),
@@ -72,14 +74,14 @@ const setAverageTemp = array => {
   let total = {}
   let floatAverage = 0
   array.forEach(item => {
-    temps = groupByTemp(item.measures, 'mainTemp', 'mainTemp')
+    temps = groupBy(item.measures, 'mainTemp')
     total = temps.reduce((prev, curr) => prev + curr)
     if (temps.length) floatAverage = total / temps.length
     item.averageTemp = Math.round(floatAverage)
   })
 }
 
-const groupByTemp = (array, prop, sum) => {
+const groupBy = (array, prop) => {
   let grouped = []
   let value = 0
   array.forEach(element => {
@@ -90,4 +92,21 @@ const groupByTemp = (array, prop, sum) => {
   })
   
   return grouped
+}
+
+const setAverageDescription = array => {
+  let descriptions = []
+  array.forEach(item => {
+    descriptions = groupBy(item.measures, 'mainDescription')
+    const rains = {name: 'Rain', count: counter(descriptions, 'Rain')}
+    const clouds = {name: 'Clouds', count: counter(descriptions, 'Clouds')}
+    const clears = {name: 'Clear', count: counter(descriptions, 'Clear')}
+    const sorter = [rains, clouds, clears]
+    const sorted = sorter.sort((a, b) => b.count - a.count)
+    item.averageDescription = sorted[0].name
+  })
+}
+
+const counter = (array, prop) => {
+  return array.filter(item => item === prop).length
 }

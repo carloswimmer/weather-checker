@@ -58,7 +58,7 @@ export default function DayCard(props) {
             color="textSecondary" 
             component="p"
           >
-            Description
+            {props.description}
           </Typography>
         </CardContent>
       </CardActionArea>

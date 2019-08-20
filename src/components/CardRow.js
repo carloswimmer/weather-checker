@@ -18,6 +18,12 @@ class CardRow extends Component {
     if (array[number]) return array[number].averageTemp
     return
   }
+
+  getDescription(days, number) {
+    let array = [].concat(days)
+    if (array[number]) return array[number].averageDescription
+    return
+  }
   
   setDetails(days, number) {
     let array = [].concat(days)
@@ -29,33 +35,36 @@ class CardRow extends Component {
   }
 
   render() {
-    let { days, dayCards, isFahrenheit } = this.props
+    let { days, dayCards, isFahrenheit, changeDetails } = this.props
     return (
       <React.Fragment>
         <Grid item sm={4}>
-          <div onClick={() => this.setDetails(days, dayCards[0])}>
+          <div onClick={() => changeDetails(days, dayCards[0])}>
             <DayCard 
               date={this.getDates(days, dayCards[0])}
               temp={this.getTemperature(days, dayCards[0])}
               fahrenheit={isFahrenheit}
+              description={this.getDescription(days, dayCards[0])}
             />
           </div>
         </Grid>
         <Grid item sm={4}>
-          <div onClick={() => this.setDetails(days, dayCards[1])}>
+          <div onClick={() => changeDetails(days, dayCards[1])}>
             <DayCard 
               date={this.getDates(days, dayCards[1])}
               temp={this.getTemperature(days, dayCards[1])}
               fahrenheit={isFahrenheit}
+              description={this.getDescription(days, dayCards[1])}
             />
           </div>
         </Grid>
         <Grid item sm={4}>
-          <div onClick={() => this.setDetails(days, dayCards[2])}>
+          <div onClick={() => changeDetails(days, dayCards[2])}>
             <DayCard 
               date={this.getDates(days, dayCards[2])}
               temp={this.getTemperature(days, dayCards[2])}
               fahrenheit={isFahrenheit}
+              description={this.getDescription(days, dayCards[2])}
             />
           </div>
         </Grid>
