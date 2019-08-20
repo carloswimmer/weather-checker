@@ -24,15 +24,6 @@ class CardRow extends Component {
     if (array[number]) return array[number].averageDescription
     return
   }
-  
-  setDetails(days, number) {
-    let array = [].concat(days)
-    if (array[number]) {
-      const measures = array[number].measures
-      const date = this.getDates(days, number)
-      this.props.changeDetails(measures, date)
-    }  
-  }
 
   render() {
     let { days, dayCards, isFahrenheit, changeDetails } = this.props

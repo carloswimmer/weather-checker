@@ -7,10 +7,6 @@ import Clear from '../assets/clear.jpg'
 
 class Background extends Component {
 
-  backgroundSwitcher() {
-    
-  }
-  
   backgroundStyle(props) {
     let Image
 
