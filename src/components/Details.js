@@ -1,14 +1,10 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { fetchForecasts } from '../actions/forecastActions'
 import Hour from './Hour'
 
 class Details extends Component {
-  componentDidMount() {
-    this.props.fetchForecasts(this.props.isFahrenheit)
-  }
-
+  
   chartStyle() {
     return {
       minHeight: '33vh',
@@ -49,16 +45,13 @@ class Details extends Component {
 }
 
 Details.propTypes = {
-  fetchForecasts: PropTypes.func.isRequired,
-  days: PropTypes.array.isRequired,
   measures: PropTypes.array.isRequired,
   isFahrenheit: PropTypes.bool.isRequired
 }
 
 const mapStateToProps = state => ({
-  days: state.forecasts.days,
   measures: state.forecasts.measures,
   isFahrenheit: state.forecasts.isFahrenheit
 })
 
-export default connect(mapStateToProps, { fetchForecasts })(Details)
+export default connect(mapStateToProps, { })(Details)
