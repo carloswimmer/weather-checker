@@ -29,7 +29,8 @@ export default function(state = initialState, action) {
     case TOGGLE_SCALE:
       return {
         ...state,
-        isFahrenheit: action.payload
+        isFahrenheit: action.payload,
+        isLoading: true,
       }
 
     case CHANGE_DAYS:
