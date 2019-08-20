@@ -22,8 +22,9 @@ export default function Hour(props) {
   }
 
   const barStyle = () => {
+    let height = props.fahrenheit ? props.temp*0.6 : props.temp*2
     return {
-      height: `${props.temp*2}%`,
+      height: `${height}%`,
       width: '44px',
       backgroundImage: 'linear-gradient(#FF8F00, #FFFFFF)',
       borderRadius: '3px',
