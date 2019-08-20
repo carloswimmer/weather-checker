@@ -17,6 +17,7 @@ export const fetchForecasts = isFahrenheit => dispatch => {
     .then(response => response.data.list)
     .then(forecasts => {
       let simplified = forecastsController(forecasts)
+      dayCards = [0, 1, 2]
 
       dispatch({
         type: FETCH_FORECASTS,
