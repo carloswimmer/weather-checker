@@ -10,7 +10,7 @@ let dayCards = []
 
 export const fetchForecasts = isFahrenheit => dispatch => {
   let scale = isFahrenheit ? 'imperial' : 'metric'
-  const url = `http://api.openweathermap.org/data/2.5/forecast?q=Munich,de&` +
+  const url = `https://api.openweathermap.org/data/2.5/forecast?q=Munich,de&` +
   `units=${scale}&APPID=${idApi}&cnt=40`
   
   axios.get(url)
