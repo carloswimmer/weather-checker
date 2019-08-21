@@ -10,7 +10,7 @@ export const forecastsController = forecasts => {
   return groupedList
 }
 
-const simplify = array => {
+export const simplify = array => {
   let forecasts = []
 
   array.forEach(item => {
@@ -28,11 +28,11 @@ const simplify = array => {
     )
     forecasts.push(forecast)
   })
-
+  console.log(forecasts)
   return forecasts
 }
 
-const dateFormatter = date => {
+export const dateFormatter = date => {
   const complete = new Date(date)
   const day = complete.getDate()
   const monthNumber = complete.getMonth()

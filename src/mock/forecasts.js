@@ -331,3 +331,126 @@ export const groupedByDay = [
     "averageDescription": "Clouds"
   }
 ]
+
+export const simplifiedForecasts = [
+  {
+    "monthDay": "21",
+    "date": "21 Aug 2019",
+    "measures": [
+      {
+        "hour": "00:00",
+        "mainTemp": 12.32,
+        "weatherIcon": "10n",
+        "windSpeed": 2.76,
+        "mainDescription": "Rain"
+      }
+    ],
+    "number": 0,
+    "averageTemp": 0
+  },
+  {
+    "monthDay": "21",
+    "date": "21 Aug 2019",
+    "measures": [
+      {
+        "hour": "03:00",
+        "mainTemp": 12.05,
+        "weatherIcon": "10n",
+        "windSpeed": 1.55,
+        "mainDescription": "Rain"
+      }
+    ],
+    "number": 0,
+    "averageTemp": 0
+  },
+  {
+    "monthDay": "21",
+    "date": "21 Aug 2019",
+    "measures": [
+      {
+        "hour": "06:00",
+        "mainTemp": 12.68,
+        "weatherIcon": "04d",
+        "windSpeed": 0.88,
+        "mainDescription": "Clouds"
+      }
+    ],
+    "number": 0,
+    "averageTemp": 0
+  },
+  {
+    "monthDay": "21",
+    "date": "21 Aug 2019",
+    "measures": [
+      {
+        "hour": "09:00",
+        "mainTemp": 16.23,
+        "weatherIcon": "02d",
+        "windSpeed": 2.67,
+        "mainDescription": "Clouds"
+      }
+    ],
+    "number": 0,
+    "averageTemp": 0
+  },
+  {
+    "monthDay": "21",
+    "date": "21 Aug 2019",
+    "measures": [
+      {
+        "hour": "12:00",
+        "mainTemp": 17.56,
+        "weatherIcon": "03d",
+        "windSpeed": 2.95,
+        "mainDescription": "Clouds"
+      }
+    ],
+    "number": 0,
+    "averageTemp": 0
+  },
+  {
+    "monthDay": "21",
+    "date": "21 Aug 2019",
+    "measures": [
+      {
+        "hour": "15:00",
+        "mainTemp": 18.87,
+        "weatherIcon": "04d",
+        "windSpeed": 3.55,
+        "mainDescription": "Clouds"
+      }
+    ],
+    "number": 0,
+    "averageTemp": 0
+  },
+  {
+    "monthDay": "21",
+    "date": "21 Aug 2019",
+    "measures": [
+      {
+        "hour": "18:00",
+        "mainTemp": 15.55,
+        "weatherIcon": "03d",
+        "windSpeed": 2.81,
+        "mainDescription": "Clouds"
+      }
+    ],
+    "number": 0,
+    "averageTemp": 0
+  },
+  {
+    "monthDay": "21",
+    "date": "21 Aug 2019",
+    "measures": [
+      {
+        "hour": "21:00",
+        "mainTemp": 13.53,
+        "weatherIcon": "04n",
+        "windSpeed": 3.09,
+        "mainDescription": "Clouds"
+      }
+    ],
+    "number": 0,
+    "averageTemp": 0
+  }
+]
