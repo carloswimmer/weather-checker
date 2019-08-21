@@ -6,6 +6,7 @@ import { withStyles } from '@material-ui/core/styles'
 import { connect } from 'react-redux'
 import { handleIsFahrenheit } from '../actions/forecastActions'
 import { fetchForecasts } from '../actions/forecastActions'
+import { Hidden } from '@material-ui/core'
 
 class ScaleSwitcher extends Component { 
   toggleScale (event) {
@@ -35,25 +36,48 @@ class ScaleSwitcher extends Component {
 
     return (
       <div style={this.containerStyle()}>
-        <Typography 
-          variant="h6" 
-          color="inherit" 
-          style={this.textStyle()}
-        >
-          CELSIUS
-        </Typography>
+        <Hidden xsDown>
+          <Typography 
+            variant="h6" 
+            color="inherit" 
+            style={this.textStyle()}
+          >
+            CELSIUS
+          </Typography>
+        </Hidden>
+        <Hidden smUp>
+          <Typography 
+            variant="h6" 
+            color="inherit" 
+            style={this.textStyle()}
+          >
+            °C
+          </Typography>
+        </Hidden>
         <OrangeSwitch
           checked={isFahrenheit}
           onChange={(event) => this.toggleScale(event)}
           inputProps={{ 'aria-label': 'scale checkbox' }}
         />
-        <Typography 
-          variant="h6" 
-          color="inherit" 
-          style={this.textStyle()}
-        >
-          FAHRENHEIT
-        </Typography>
+        <Hidden smUp>
+          <Typography 
+            variant="h6" 
+            color="inherit" 
+            style={this.textStyle()}
+          >
+            °F
+          </Typography>
+        </Hidden>
+        <Hidden xsDown>
+          <Typography 
+            variant="h6" 
+            color="inherit" 
+            style={this.textStyle()}
+          >
+            FAHRENHEIT
+          </Typography>
+        </Hidden>
+        
       </div>
     )
   }

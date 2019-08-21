@@ -18,7 +18,7 @@ class ChartRow extends Component {
   render() {
     return (
       <React.Fragment>
-        <Grid item sm={12}>
+        <Grid item xs={12}>
           <Paper 
             component={'div'} 
             style={this.paperStyle()}

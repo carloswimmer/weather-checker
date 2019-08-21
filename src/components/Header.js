@@ -33,7 +33,7 @@ export default function Header() {
             color="inherit" 
             className={classes.title}
           >
-            WEATHER 
+            &nbsp;WEATHER&nbsp;
             <span className={classes.nameBold}>
               CHECKER
             </span>

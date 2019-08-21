@@ -6,6 +6,7 @@ import Grid from '@material-ui/core/Grid'
 import TimeController from './TimeController'
 import ChartRow from './ChartRow'
 import CardRow from './CardRow'
+import { Hidden } from '@material-ui/core'
 
 const useStyles = makeStyles(theme => ({
   container: {
@@ -36,35 +37,63 @@ export default function Forecasts() {
             container 
             justify="center"
           >
-            <Grid 
-              container
-              item 
-              sm={2} 
-              spacing={3}
-              justify="center"
-              alignItems="center"
-            >
-              <TimeController increment={false}/>
-            </Grid>
+            <Hidden smDown>
+              <Grid 
+                container
+                item 
+                sm={2} 
+                spacing={3}
+                justify="center"
+                alignItems="center"
+              >
+                <TimeController increment={false}/>
+              </Grid>
+            </Hidden>
             <Grid 
               container 
               item 
-              sm={8} 
+              md={8}
+              sm={12} 
               spacing={3}
+              justify="center"
             >
+              <Hidden mdUp>
+                <Grid 
+                  container
+                  item 
+                  xs={6} 
+                  spacing={3}
+                  justify="flex-start"
+                  alignItems="center"
+                >
+                  <TimeController increment={false}/>
+                </Grid>
+                <Grid 
+                  container
+                  item 
+                  xs={6} 
+                  spacing={3}
+                  justify="flex-end"
+                  alignItems="center"
+                >
+                  <TimeController increment={true}/>
+                </Grid>
+              </Hidden>
               <CardRow />
               <ChartRow />
             </Grid>
-            <Grid 
-              container 
-              item
-              sm={2} 
-              spacing={3}
-              justify="center"
-              alignItems="center"
-            >
-              <TimeController increment={true}/>
-            </Grid>
+            <Hidden smDown>
+              <Grid 
+                container 
+                item
+                sm={2} 
+                spacing={3}
+                justify="center"
+                alignItems="center"
+              >
+                <TimeController increment={true}/>
+              </Grid>
+            </Hidden>
           </Grid>
         </div>
         </Container>

@@ -29,7 +29,7 @@ class CardRow extends Component {
     let { days, dayCards, isFahrenheit, changeDetails } = this.props
     return (
       <React.Fragment>
-        <Grid item sm={4}>
+        <Grid item sm={4} xs={12}>
           <div onClick={() => changeDetails(days, dayCards[0])}>
             <DayCard 
               date={this.getDates(days, dayCards[0])}
@@ -39,7 +39,7 @@ class CardRow extends Component {
             />
           </div>
         </Grid>
-        <Grid item sm={4}>
+        <Grid item sm={4} xs={12}>
           <div onClick={() => changeDetails(days, dayCards[1])}>
             <DayCard 
               date={this.getDates(days, dayCards[1])}
@@ -49,7 +49,7 @@ class CardRow extends Component {
             />
           </div>
         </Grid>
-        <Grid item sm={4}>
+        <Grid item sm={4} xs={12}>
           <div onClick={() => changeDetails(days, dayCards[2])}>
             <DayCard 
               date={this.getDates(days, dayCards[2])}
