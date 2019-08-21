@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "6e193c98976dc0d1e083d563611eacac",
+    "revision": "084038ca9e84433b11e9107c08da99b3",
     "url": "/weather-checker/index.html"
   },
   {
-    "revision": "3a4f087dbd590d93a6da",
+    "revision": "b602bc832dac52f8ec1c",
     "url": "/weather-checker/static/css/2.cf1bafc2.chunk.css"
   },
   {
-    "revision": "437d980a9f329c1e5b7a",
+    "revision": "4e8ac74d5ca33057ea58",
     "url": "/weather-checker/static/css/main.5facb584.chunk.css"
   },
   {
-    "revision": "3a4f087dbd590d93a6da",
-    "url": "/weather-checker/static/js/2.e306554b.chunk.js"
+    "revision": "b602bc832dac52f8ec1c",
+    "url": "/weather-checker/static/js/2.0209760b.chunk.js"
   },
   {
-    "revision": "437d980a9f329c1e5b7a",
-    "url": "/weather-checker/static/js/main.4ccba6a1.chunk.js"
+    "revision": "4e8ac74d5ca33057ea58",
+    "url": "/weather-checker/static/js/main.2a7cf4e4.chunk.js"
   },
   {
     "revision": "40aa339c444676682800",
