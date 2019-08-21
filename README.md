@@ -10,13 +10,13 @@ All temperature information is shown in Celsius degrees, but clicking on a switc
 See some prints above:
 
 ### In Celsius degrees
-
+![screen with celsius degrees](https://raw.githubusercontent.com/carloswimmer/weather-checker/master/screen_shots/celsius.png) 
 
 ### In Fahrenheits
-
+![screen with fahrenheit degrees](https://raw.githubusercontent.com/carloswimmer/weather-checker/master/screen_shots/fahrenheit.png) 
 
 ### Loader screen
-
+![screen while loading data](https://raw.githubusercontent.com/carloswimmer/weather-checker/master/screen_shots/loader.png) 
 
 
 ### Weather forecast end-point
