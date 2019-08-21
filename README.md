@@ -18,6 +18,15 @@ See some prints above:
 ### Loader screen
 ![screen while loading data](https://raw.githubusercontent.com/carloswimmer/weather-checker/master/screen_shots/loader.png) 
 
+### Design concept
+The main idea is to imediatly trasmit how the weather is (or will be) with the background image, using physical sensation as information. The bright colors were chosen to balance the "not so bright" sensation of some cloudy and rainy days. The goal here is to keep the user state of equilibrium and satisfaction.
+
+## Future improvements
+Some plans had to be left for next version (yes, life demands choices):
+* smooth transitions between screen changes
+* fluid transform size on bar charts when user change day details
+* carrousel movement on card changes
+* hide id API into path variable stored on server, to be included only on build stage
 
 ### Weather forecast end-point
 
