@@ -1,0 +1,132 @@
+[
+  {
+    "monthDay": "21",
+    "date": "21 Aug 2019",
+    "measures": [
+      {
+        "hour": "00:00",
+        "mainTemp": 12.32,
+        "weatherIcon": "10n",
+        "windSpeed": 2.76,
+        "mainDescription": "Rain"
+      },
+      {
+        "hour": "03:00",
+        "mainTemp": 12.05,
+        "weatherIcon": "10n",
+        "windSpeed": 1.55,
+        "mainDescription": "Rain"
+      },
+      {
+        "hour": "06:00",
+        "mainTemp": 12.68,
+        "weatherIcon": "04d",
+        "windSpeed": 0.88,
+        "mainDescription": "Clouds"
+      },
+      {
+        "hour": "09:00",
+        "mainTemp": 16.23,
+        "weatherIcon": "02d",
+        "windSpeed": 2.67,
+        "mainDescription": "Clouds"
+      },
+      {
+        "hour": "12:00",
+        "mainTemp": 17.56,
+        "weatherIcon": "03d",
+        "windSpeed": 2.95,
+        "mainDescription": "Clouds"
+      },
+      {
+        "hour": "15:00",
+        "mainTemp": 18.87,
+        "weatherIcon": "04d",
+        "windSpeed": 3.55,
+        "mainDescription": "Clouds"
+      },
+      {
+        "hour": "18:00",
+        "mainTemp": 15.55,
+        "weatherIcon": "03d",
+        "windSpeed": 2.81,
+        "mainDescription": "Clouds"
+      },
+      {
+        "hour": "21:00",
+        "mainTemp": 13.53,
+        "weatherIcon": "04n",
+        "windSpeed": 3.09,
+        "mainDescription": "Clouds"
+      }
+    ],
+    "number": 0,
+    "averageTemp": 15,
+    "averageDescription": "Clouds"
+  },
+  {
+    "monthDay": "22",
+    "date": "22 Aug 2019",
+    "measures": [
+      {
+        "hour": "00:00",
+        "mainTemp": 13.35,
+        "weatherIcon": "04n",
+        "windSpeed": 3.56,
+        "mainDescription": "Clouds"
+      },
+      {
+        "hour": "03:00",
+        "mainTemp": 12.56,
+        "weatherIcon": "04n",
+        "windSpeed": 3.5,
+        "mainDescription": "Clouds"
+      },
+      {
+        "hour": "06:00",
+        "mainTemp": 14.15,
+        "weatherIcon": "04d",
+        "windSpeed": 4.93,
+        "mainDescription": "Clouds"
+      },
+      {
+        "hour": "09:00",
+        "mainTemp": 18.23,
+        "weatherIcon": "01d",
+        "windSpeed": 5.33,
+        "mainDescription": "Clear"
+      },
+      {
+        "hour": "12:00",
+        "mainTemp": 20.75,
+        "weatherIcon": "01d",
+        "windSpeed": 5.01,
+        "mainDescription": "Clear"
+      },
+      {
+        "hour": "15:00",
+        "mainTemp": 21.75,
+        "weatherIcon": "01d",
+        "windSpeed": 3.92,
+        "mainDescription": "Clear"
+      },
+      {
+        "hour": "18:00",
+        "mainTemp": 17.74,
+        "weatherIcon": "01d",
+        "windSpeed": 2.33,
+        "mainDescription": "Clear"
+      },
+      {
+        "hour": "21:00",
+        "mainTemp": 14.9,
+        "weatherIcon": "01n",
+        "windSpeed": 2.62,
+        "mainDescription": "Clear"
+      }
+    ],
+    "number": 1,
+    "averageTemp": 17,
+    "averageDescription": "Clear"
+  }
+]
