@@ -19,7 +19,7 @@ See some prints above:
 ![screen while loading data](https://raw.githubusercontent.com/carloswimmer/weather-checker/master/screen_shots/loader.png) 
 
 ### Design concept
-The main idea is to immediately communicate how the weather is (or will be) just with the background image, using physical sensation as information. The bright colors were chosen to balance the "not so bright" sensation of some cloudy and rainy days. The goal here is to keep the user state of equilibrium and satisfaction.
+The main idea is to immediately communicate how the weather is (or will be) just with the background image, using physical sensation as information. The bright colors were chosen to balance the "not so bright" sensation of some cloudy and rainy days. The goal here is to keep the user state of equilibrium and satisfaction in a high level.
 
 ## Future improvements
 Some plans had to be left for next version (yes, life demands choices):
