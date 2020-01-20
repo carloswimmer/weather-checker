@@ -21,15 +21,15 @@ See some prints above:
 ### Design concept
 The main idea is to immediately communicate how the weather is (or will be) just with the background image, using physical sensation as information. The bright colors were chosen to balance the "not so bright" sensation of some cloudy and rainy days. The goal here is to keep the user state of equilibrium and satisfaction in a high level.
 
+### Link to app
+https://carloswimmer.github.io/weather-checker/
+
 ## Future improvements
 Some plans had to be left for next version (yes, life demands choices):
 * smooth transitions between screen changes
 * fluid transform size on bar charts when user change day details
 * carrousel movement on card changes
 * hide id API into path variable stored on server, to be included only on build stage
-
-### Link to app
-https://carloswimmer.github.io/weather-checker/
 
 ### Weather forecast end-point
 
