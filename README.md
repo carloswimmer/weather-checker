@@ -28,6 +28,9 @@ Some plans had to be left for next version (yes, life demands choices):
 * carrousel movement on card changes
 * hide id API into path variable stored on server, to be included only on build stage
 
+### Link to app
+https://carloswimmer.github.io/weather-checker/
+
 ### Weather forecast end-point
 
 #### Celcius
