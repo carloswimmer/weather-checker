@@ -1,0 +1,53 @@
+.fade-appear {
+  opacity: 0;
+  z-index: 1;
+}
+.fade-appear.fade-appear-active {
+  opacity: 1;
+  transition: opacity 600ms linear;
+}
+
+.fade-enter {
+  opacity: 0;
+  z-index: 1;
+}
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transition: opacity 600ms linear;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+.fade-exit.fade-exit-active {
+  opacity: 0;
+  transition: opacity 600ms linear;
+}
+.fade-exit-done {
+  opacity: 0;
+}
+
+.fade-bg-enter {
+  opacity: 0;
+}
+.fade-bg-enter.fade-bg-enter-active {
+  opacity: 0.6;
+  transition: opacity 300ms ease-in-out 300ms;
+}
+
+.fade-bg-exit {
+  opacity: 0.6;
+}
+.fade-bg-exit.fade-bg-exit-active {
+  opacity: 0;
+  transition: opacity 300ms ease-in-out;
+}
+.fade-bg-exit-done {
+  opacity: 0;
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    overflow: hidden;
+  }
+}

@@ -4,36 +4,34 @@ import { connect } from 'react-redux'
 import Rain from '../assets/rain.jpg'
 import Clouds from '../assets/clouds.jpg'
 import Clear from '../assets/clear.jpg'
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 class Background extends Component {
 
-  backgroundStyle(props) {
-    let Image
-
+  backgroundDay(props) {
     switch (props) {
       case 'Rain':
-        Image = Rain
-        break
-    
+        return (<div style={this.backgroundStyle(Rain)}></div>)
+
       case 'Clouds':
-        Image = Clouds
-        break
+        return (<div style={this.backgroundStyle(Clouds)}></div>)
 
       case 'Clear':
-        Image = Clear
-        break
-        
+        return (<div style={this.backgroundStyle(Clear)}></div>)
+
       default:
         break
     }
+  }
 
+  backgroundStyle(image) {
     return {
       width: '100vw',
       height: '100vh',
       position: 'fixed',
       top: 0,
       left: 0,
-      backgroundImage: `url(${Image})`,
+      backgroundImage: `url(${image})`,
       backgroundRepeat: 'no-repeat',
       backgroundSize: 'cover',
       zIndex: -1,
@@ -43,11 +41,18 @@ class Background extends Component {
   }
 
   render() {
-    let { dayDescription } = this.props
+    let { dayDescription, detailsDate } = this.props
 
     return (
-      <div style={this.backgroundStyle(dayDescription)}>
-      </div>
+      <TransitionGroup>
+        <CSSTransition
+          key={detailsDate}
+          timeout={600}
+          classNames="fade-bg"
+        >
+          {this.backgroundDay(dayDescription)}
+        </CSSTransition>
+      </TransitionGroup>
     )
   }
 }
@@ -57,7 +62,8 @@ Background.propTypes = {
 }
 
 const mapStateToProps = state => ({
-  dayDescription: state.forecasts.dayDescription
+  dayDescription: state.forecasts.dayDescription,
+  detailsDate: state.forecasts.detailsDate
 })
 
-export default connect(mapStateToProps, { })(Background)
+export default connect(mapStateToProps, {})(Background)

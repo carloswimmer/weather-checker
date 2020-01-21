@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 import { fetchForecasts } from '../actions/forecastActions'
 import Header from './Header'
 import Loader from './Loader'
@@ -18,16 +19,23 @@ class Content extends Component {
     const checkLoad = loading => {
       if (loading) {
         return (
+          <CSSTransition
+            in={loading}
+            appear={true}
+            timeout={600}
+            classNames="fade"
+          >
           <div>
             <Header />
             <Loader />
           </div>
+          </CSSTransition>
         )
       }
       return (
         <div>
-          <Background />
           <Header />
+          <Background />
           <Forecasts />
         </div>
       )
@@ -35,7 +43,15 @@ class Content extends Component {
 
     return (
       <div>
-        { checkLoad(isLoading) }
+        <TransitionGroup>
+          <CSSTransition
+            key={isLoading}
+            timeout={600}
+            classNames="fade"
+          >
+            {checkLoad(isLoading)}
+          </CSSTransition>
+        </TransitionGroup>
       </div>
     )
   }

@@ -28,7 +28,6 @@ export const simplify = array => {
     )
     forecasts.push(forecast)
   })
-  console.log(forecasts)
   return forecasts
 }
 
