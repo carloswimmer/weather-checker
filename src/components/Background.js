@@ -31,9 +31,9 @@ class Background extends Component {
       position: 'fixed',
       top: 0,
       left: 0,
-      // backgroundImage: `url(${image})`,
-      // backgroundRepeat: 'no-repeat',
-      // backgroundSize: 'cover',
+      backgroundImage: `url(${image})`,
+      backgroundRepeat: 'no-repeat',
+      backgroundSize: 'cover',
       zIndex: -1,
       opacity: 0.6,
       filter: 'blur(5px)'
